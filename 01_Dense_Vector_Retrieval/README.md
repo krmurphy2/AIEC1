@@ -68,6 +68,7 @@ Why is cosine similarity useful for dense vector retrieval?
 
 ##### ✅ Answer:
 
+Consine similarity is useful because it can take the numerical values from the embedding model and compare them to find out if the vecors are similar. This allows for comparing two ore more phrases or sets of text that could have no common words but are related in meaning. The result of the consine always provides a confidence level since it is rated on a scale of 0 to 1.
 ---
 
 ## 🏗️ Activity #2: Build the Vector RAG Pipeline
@@ -87,17 +88,23 @@ Why is metadata important for a RAG application?
 
 ##### ✅ Answer:
 
+The metadata gets embedded into the chunks that can be used to provide transparency of sourcing to the enduser when attached to their query. Depending on what you add as your metadata it can also provide additional context for the searches such as how updated the information might be or who the author was.
+
 #### ❓Question #3
 
 What tradeoff do we make when choosing chunk size and chunk overlap?
 
 ##### ✅ Answer:
 
+This is ultimately choosing how much context is within each chunk which impacts the completeness or percision of the returned data. Smaller chunks can be more precise answers but requires retrieving more chunks to build a complete answer. While chunk overlap can help retain context within a chunk but it causes increased storage in duplicate text across chunks
+
 #### ❓Question #4
 
 What does a similarity score help you understand, and what does it not prove by itself?
 
 ##### ✅ Answer:
+
+Similarity score helps understand the positive relationship between the query and the returned vector chunks. High scores are going to indicate a higher relavance to the query. It is giving a confidence rating but it is not giving validity to the returned data. The data from the vector could be semantically similar but completely incorrect information.
 
 ---
 
@@ -114,6 +121,14 @@ For the vibe check queries, did the retrieved context seem relevant before gener
 
 ##### ✅ Answer:
 
+**Vibe Check Query 1:** The first context is very relevant but lacks completeness. It speaks about different preventative care actions but cuts off during the final sentance in reference to recommendations "Thus, recommen- dations for prevention and control should re ﬂect knowledge of the'". The second context is not very relevant is it just talking about cats in the medical system and not specifically about preventative actions. The third chunk provides some preventative care and it is relevant. The final chunk is slightly relevant. It doesn't provide any direct answers but it does provide some external references that could result in more answers if presented to the user that asked the question.
+
+**Vibe Check Query 2:** The first context is very relevant. It calls out specific symptoms or behaviors that should trigger conversations with the vet as well as what questions to ask.The second context has some relevance as it mentions a reason to have a vet visit related to DJD symptoms but mostly the chunk has extra data that isn't relevant. While the third chunk doesn't call out vet calls or visits it does list some symptoms that can be linked to serious conditions which would imply the followup with the Vet. The last chunk is less relevant because it is more about questions and activities during the vet visit and not specifically about reasons to call the vet
+
+**Vibe Check Query 3:** The first chunk as good relevance as it discusses Daily energy requirements (DER) for the cat and how it relates to the food intake. The second context is less direct but does reference food labeled with "Association of American Feed Control" so this would be useful information to provide back to the user. The third chunk includes sections about engery levels, caloric intake and the prevelence of diabities in cat but I don't see it giving any actionable advice and so I would rate it less relevant but adjacent to the question. I would say the last context is also relevant because it discusses the changing in diet as the kitten grows.
+
+**Vibe Check Query 4:** None of these context are relevant because the question is absurd and wouldn't have any relevant data in this PDF.
+
 ---
 
 ## 🏗️ Activity #4: Tune Retrieval
@@ -129,13 +144,15 @@ Document what changed and whether retrieval improved.
 
 ##### Settings Changed:
 
--
+- Chunk Size from 1000 to 500
+- Chunk Overlap from 200 to 50
+- Retrieval `k` from 4 to 8
 
 ##### Results:
 
-1.
-2.
-3.
+1. Chunk setting resulted in 232 chunks instead of 135
+2. The first test resulted in a less relevant answer that included an message about not having enough data to provide a definitive answer. It seemed that the source contexts had data but since they were missing the larger size there wasn't enough context
+3. Increasing the number of vectors passed to LLM allowed for more context even with the lower chunks getting a more complete answer. 
 
 ---
 
