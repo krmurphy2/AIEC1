@@ -26,7 +26,7 @@ First, do these things:
 
 You can follow [this guide](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories) if you need to, but creating a blank repo is pretty straightforward. A few notes on the seeing you should use, as shown below.
 
-1. Please use the **repository name** that corresponds to your cohort! e.g., AIE9, AIEO2, etc. Don't get fancy with the name - your life will be easier if you keep the name simple.
+1. Please use the **repository name** that corresponds to your cohort! e.g., AIEC1. Don't get fancy with the name - your life will be easier if you keep the name simple.
 2. The process will be easiest if you make sure **Add a README file is deselected**.
 
 ![image](https://i.imgur.com/WQtlxc5.png)
@@ -60,10 +60,10 @@ cd yourrepo
 
 ### 4️⃣ Add Class Repo as an Upstream Remote
 
-First, run this command (but make sure to replace the XX with your cohort number):
+First, run this command:
 
 ```markdown
-git remote add upstream git@github.com:AI-Maker-Space/AIEXX.git
+git remote add upstream git@github.com:AI-Maker-Space/The-AI-Engineering-Certification-v1.0.git
 ```
 
 Verify both remotes are connected. *You should see both "origin" (your repo) and "upstream" (class repo)*.
@@ -75,10 +75,10 @@ git remote -v
 You should see an output very similar to this (your origin will be a different address)
 
 ```
-origin  git@github.com:chris-alexiuk/AIEO1.git (fetch)
-origin  git@github.com:chris-alexiuk/AIEO1.git (push)
-upstream        git@github.com:AI-Maker-Space/AIEO1.git (fetch)
-upstream        git@github.com:AI-Maker-Space/AIEO1.git (push)
+origin  git@github.com:yourusername/yourrepo.git (fetch)
+origin  git@github.com:yourusername/yourrepo.git (push)
+upstream        git@github.com:AI-Maker-Space/The-AI-Engineering-Certification-v1.0.git (fetch)
+upstream        git@github.com:AI-Maker-Space/The-AI-Engineering-Certification-v1.0.git (push)
 
 ```
 
