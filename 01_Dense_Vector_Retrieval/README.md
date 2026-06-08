@@ -149,12 +149,14 @@ Document what changed and whether retrieval improved.
 - Chunk Overlap from 200 to 50
 - Retrieval `k` from 4 to 8
 
-##### Results:
+##### Results: (More details stored in the 01_Cat_Health_Vector_RAG_LangChain_Qdrant.ipynb notebook)
 
 1. Chunk setting resulted in 232 chunks instead of 135
 2. The first test resulted in a less relevant answer that included an message about not having enough data to provide a definitive answer. It seemed that the source contexts had data but since they were missing the larger size there wasn't enough context
 3. Increasing the number of vectors passed to LLM allowed for more context even with the lower chunks getting a more complete answer. 
 
+## Loom Link
+https://www.loom.com/share/e5af536532484703bea37e98ca181541
 ---
 
 ## Optional Deep Dive: RAG From Scratch
