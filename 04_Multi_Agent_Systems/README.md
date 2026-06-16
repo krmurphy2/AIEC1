@@ -9,8 +9,7 @@
 
 | Session Sheet | Recording | Slides | Repo | Homework | Feedback |
 |:--------------|:----------|:-------|:-----|:---------|:---------|
-| [Multi-Agent Applications](../00_Docs/Session_Sheets/05_Multi-Agent_Applications.md) and [Deep Research](../00_Docs/Session_Sheets/08_Deep_Research.md) | | | You are here! | | |
-
+| [Session 4: Multi-Agent Applications & Deep Research](https://github.com/AI-Maker-Space/The-AI-Engineering-Certification-v1.0/tree/main/00_Docs/Modules/04_Multi-Agents_and_Deep_Research) |[Recording!](https://us02web.zoom.us/rec/share/pgJD6YlyDWRiOFvmHM7-CiRKbpRJliFZQqdVoZ3XftpQgNoePo-rzmmM7WnNJkkJ.lLQHPrPywa4OuCW3) <br> passcode: `zuG8$L^2`| [Session 4 Slides](https://canva.link/o08r40dpeivhsbv) |You are here! | [Session 4 Assignment](https://forms.gle/mtKgcLg7DqXv5jSW7) | [Feedback 6/11](https://forms.gle/drC5bJkK2wKMbWEg9) |
 ## Main Assignment
 
 In this assignment, you will build a multi-agent deep research system for investigating feline nutrition and obesity.
