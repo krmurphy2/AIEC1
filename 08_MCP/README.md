@@ -176,3 +176,7 @@ Add at least one new tool to the cat shop MCP server (e.g., `search_products`, `
 Build a custom MCP client that connects to the cat shop server over Streamable HTTP, authenticates via OAuth, and orchestrates a multi-step shopping flow (browse → add to cart → checkout). Compare the developer experience of MCP-based tool integration vs. traditional REST API calls.
 
 Include your findings and a demo in your Loom video.
+
+
+## Recording
+We block local screen recordings so I can't make a video but I created screenshots and a walkthrough: https://github.com/krmurphy2/AIEC1/blob/Module08/08_MCP/demo/DemoREADME.md
