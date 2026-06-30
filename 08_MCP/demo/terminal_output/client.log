@@ -1,0 +1,119 @@
+root@b073f4b26300:/workspaces/AIEC1/08_MCP# uv run client.py --interactive
+
+Sign in to Cat Shop: http://localhost:8000/authorize?response_type=code&client_id=bbb4fc70-b368-4657-a258-36f9bf67135e&redirect_uri=http%3A%2F%2F127.0.0.1%3A8765%2Fcallback&state=5SMX94VjxbLhzTb9HPmf3ke8Kr5WxyTLPC0P3qYivTQ&code_challenge=iqktUgOhSBenTEvlbzbqx2tIsmgUxx_m1S_8ifPr0fA&code_challenge_method=S256&resource=http%3A%2F%2Flocalhost%3A8000%2F&scope=read+write
+
+
+Loaded LangChain tools: list_products, get_product, add_to_cart, view_cart, remove_from_cart, checkout, get_order_history
+
+Ask about the catalog or your cart. Type 'quit' to exit.
+
+You: what products do you have
+
+Cat Shop:
+
+Here’s what we have:
+
+**Toys**
+- Whisker Wand — $9.99
+- Catnip Mouse — $4.99
+- Laser Pointer Pro — $12.99
+
+**Beds**
+- Cozy Cat Bed — $29.99
+- Window Hammock — $24.99
+
+**Food**
+- Salmon Treats — $7.99
+- Tuna Crunchies — $5.99
+
+**Furniture**
+- Scratching Post Tower — $49.99
+
+If you want, I can also show details for any product or help you add items to your cart.
+
+You: what orders do I have?
+
+Cat Shop:
+
+You don’t have any past orders yet.
+
+You: what is in my cart?
+
+Cat Shop:
+
+Your cart is empty right now.
+
+You: add whisker wand and a cozy cat bed to my cart
+
+Cat Shop:
+
+Done — I added:
+
+- Whisker Wand
+- Cozy Cat Bed
+
+If you want, I can also show your cart.
+
+You: checkout
+
+Cat Shop:
+
+Your order is confirmed!
+
+Order ID: 86F90AE7D5B01B17  
+Total: $39.98
+
+Items:
+- Whisker Wand × 1 — $9.99
+- Cozy Cat Bed × 1 — $29.99
+
+Thanks KevinM, your cats will love their new goodies!
+
+You: whats in my cart?
+
+Cat Shop:
+
+Your cart is empty.
+
+You: add 3 tuna and 2 treats to my cart
+
+Cat Shop:
+
+Added 3x Tuna Crunchies and 2x Salmon Treats to your cart.
+
+You: checkout
+
+Cat Shop:
+
+Your order is confirmed!
+
+- Order ID: 61F37F08D06D9774
+- Total: $33.95
+
+Items:
+- Salmon Treats — 2 × $7.99 = $15.98
+- Tuna Crunchies — 3 × $5.99 = $17.97
+
+Thanks KevinM, your cats will love their new goodies!
+
+You: show me all my orders
+
+Cat Shop:
+
+Here are your 2 most recent orders:
+
+1. Order `61F37F08D06D9774`
+   - Total: $33.95
+   - Items:
+     - Salmon Treats — 2 × $7.99 = $15.98
+     - Tuna Crunchies — 3 × $5.99 = $17.97
+
+2. Order `86F90AE7D5B01B17`
+   - Total: $39.98
+   - Items:
+     - Whisker Wand — 1 × $9.99 = $9.99
+     - Cozy Cat Bed — 1 × $29.99 = $29.99
+
+If you want, I can also show the cart or help you browse products.
+
+You: 
