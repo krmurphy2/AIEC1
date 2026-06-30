@@ -1,4 +1,5 @@
 import secrets
+import time
 
 from mcp.server.auth.middleware.auth_context import get_access_token
 
@@ -128,10 +129,24 @@ async def checkout() -> dict:
     if not cart["items"]:
         return {"error": "Your cart is empty"}
 
+    order_id = secrets.token_hex(8).upper()
+    created_at = time.time()
+
+    await db.execute(
+        "INSERT INTO orders (order_id, username, total, created_at) VALUES (?, ?, ?, ?)",
+        (order_id, username, cart["total"], created_at),
+    )
+    await db.executemany(
+        """INSERT INTO order_items (order_id, product_id, name, price, quantity)
+           VALUES (?, ?, ?, ?, ?)""",
+        [
+            (order_id, item["product_id"], item["name"], item["price"], item["quantity"])
+            for item in cart["items"]
+        ],
+    )
     await db.execute("DELETE FROM cart_items WHERE username = ?", (username,))
     await db.commit()
 
-    order_id = secrets.token_hex(8).upper()
     return {
         "order_id": order_id,
         "status": "confirmed",
@@ -139,3 +154,50 @@ async def checkout() -> dict:
         "total": cart["total"],
         "message": f"Order {order_id} confirmed! Thanks {username}, your cats will love their new goodies!",
     }
+
+
+@mcp.tool()
+async def get_order_history(limit: int = 10) -> dict:
+    """List your past orders, most recent first. Each order includes its items and total."""
+    username = await _get_username()
+    db = await oauth_provider._get_db()
+
+    limit = max(1, min(limit, 50))
+
+    cursor = await db.execute(
+        """SELECT order_id, total, created_at FROM orders
+           WHERE username = ?
+           ORDER BY created_at DESC
+           LIMIT ?""",
+        (username, limit),
+    )
+    order_rows = await cursor.fetchall()
+
+    orders = []
+    for order_id, total, created_at in order_rows:
+        item_cursor = await db.execute(
+            """SELECT product_id, name, price, quantity FROM order_items
+               WHERE order_id = ?""",
+            (order_id,),
+        )
+        items = [
+            {
+                "product_id": r[0],
+                "name": r[1],
+                "price": r[2],
+                "quantity": r[3],
+                "subtotal": round(r[2] * r[3], 2),
+            }
+            for r in await item_cursor.fetchall()
+        ]
+        orders.append(
+            {
+                "order_id": order_id,
+                "total": round(total, 2),
+                "created_at": created_at,
+                "item_count": len(items),
+                "items": items,
+            }
+        )
+
+    return {"orders": orders, "count": len(orders)}
