@@ -155,7 +155,9 @@ Why is OAuth important for MCP servers, and what security considerations should 
 
 #### Answer
 
-_(insert your answer here)_
+An MCP server is essentially just another web endpoint that can return data and execute remote commands. The identity is important to limit execution to approved parties and track who triggered the event. OAuth is a common way to authenticate and authorize access to the server. It will give the MCP server an identity, authorized scopes, and revokable tokens. This can be used to tie into most modern authentication systems like Okta or Microsoft Azure AD.
+
+When exposing tools to AI clients, we need to be aware that the AI client has access to the user's credentials and they can execute whatever the user has permissions. This means if the agent decides it needs to take a deletion action to resolve a situation it might not have the guardrails to know not to do that or to check with the user. Similarly, that agent may be triggered by other malicious code that could be used to execute commands on the local machine or remote services with the user's permissions.
 
 ### Question #2
 
@@ -163,7 +165,7 @@ What is Streamable HTTP transport in MCP, and why might you expose a server publ
 
 #### Answer
 
-_(insert your answer here)_
+A publicly exposed server using OAuth allows for a central deployment that can be accessed by multiple AI clients, whereas a local stdio connection is limited to a single local process. This can be used to enforce controls and lifecycle over the server.
 
 ## Activity 1: Extend the MCP Server
 
