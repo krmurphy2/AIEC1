@@ -9,7 +9,7 @@
 
 | Session Sheet | Recording | Slides | Repo | Homework | Feedback |
 |:--------------|:----------|:-------|:-----|:---------|:---------|
-| [Agent Servers](../00_Docs/Session_Sheets/15_Agent_Servers/README.md) | | | You are here! | | |
+| [Agent Servers](../00_Docs/Session_Sheets/15_Agent_Servers/README.md) | | | [Vercel Deployment](https://aiec-09-agent-servers.vercel.app/) | | |
 
 ## Useful Resources
 
