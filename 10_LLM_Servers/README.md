@@ -83,7 +83,7 @@ What is the difference between serverless and dedicated endpoints?
 
 #### ✅ Answer:
 
-_(insert your answer here)_
+The difference comes down to billing and performance. Serverless endpoints bill you based off token usage but it runs off shared infrastructure so if you are routed to a heavily used GPU then you may experience slower response times. Dedicated instances deploy an dedicated server for you so the resources are always available for your dedicated use without being shared with others but you pay by the hour for the running resources not based so you are being charged even when you aren't using it directly.
 
 ### ❓ Question #2:
 
@@ -91,7 +91,7 @@ Why is it important to consider token throughput and latency when choosing an LL
 
 #### ✅ Answer:
 
-_(insert your answer here)_
+These are direct impacts on how your user feels about your application. Latency is just the same as ever every moment spent waiting on a reply makes the user feel board and anxious. We were already bad before TicTok and now we have even shorter wait spans. Token throughput is how many tokens our app can pass through the LLM at a time and if you are scaling beyond yourself than the number of tokens will scale and you will see more delays and possible errors when your application is trying to get back answers from the LLM.
 
 ## Activity 1: RAGAS Evaluation with Cost Analysis
 
