@@ -428,7 +428,9 @@ Why does LangSmith deploy your agent as an API backend only, and why do you stil
 
 #### Answer
 
-_(insert your answer here)_
+A running agent is most likely only going to be running as a backend API that does the heavy lifting. A running AI agent is going to have different optimizations for the runtime than a web frontend. LangSmith is providing tight integration to their agent run time and observability tools. 
+
+We don't technically need the Vercel frontend if we wanted to build another client option for interacting with the agent. We could build a CLI tool that makes calls to the agent deployment just as the Next.js frontend does from Vercel. In either case, a friendly client will be needed to wrap all the calls and authentication back to the agent deployment.
 
 ### Question #2
 
@@ -436,7 +438,7 @@ Why should the LangSmith API key live in a Next.js API route (server-side) inste
 
 #### Answer
 
-_(insert your answer here)_
+The LangSmith API key is what is used to authenticate to the LangSmith API and gain access to the agent deployment. It needs to be stored server-side so the front-end can make the calls to the agent without exposing the key to the end user. If the key was stored in the browser, then it is exposed to the end user via local tools to inspect the browser data. Once the key is exposed, then the agent can be accessed by anyone not granted access to the frontend and it could run up charges against the agent. They could even use the key to replace the agent backend and provide false information to the Vercel deployment. 
 
 ## Activity 1: Build a Helpfulness Loop in Production
 
