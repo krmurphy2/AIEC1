@@ -7,7 +7,7 @@
 
 | 📰 Session Sheet | ⏺️ Recording | 🖼️ Slides | 👨‍💻 Repo | 📝 Homework | 📁 Feedback |
 | ------------------------------------------------- | -------------------------------------- | -------------------------------------------- | ------------- | ---------------------------------------------------------- | ----------------------------------- |
-| Session 18: SDG for Agent Trajectory Evals | Coming Soon! | Coming Soon! | You are here! | Coming Soon! | Coming Soon! |
+| [Session 18: Agent Evals via Simulation](https://github.com/AI-Maker-Space/The-AI-Engineering-Certification-v1.0/blob/main/00_Docs/Modules/18_Agent_Evals_Via_Simulation/README.md) |[Recording!](https://us02web.zoom.us/rec/share/qVS3RyoXTDVw-s6DIavehzgfkH9B_gXWzQAqtqS06ejLkA0Iv6KRWPY6AhW-WcsE.gsYLI9Ei2uwaNFtM) <br> passcode: `a@TeW6Eh`| [Session 18 Slides](https://canva.link/cjnasvkvsnxdavf) |You are here! | [Optional Session 18 Assignment](https://forms.gle/o6m16rtLgpjnX9Ch8) | [Feedback 7/30](https://forms.gle/9xJ4QtriEw6phAN29) |
 
 ## Prerequisites
 
